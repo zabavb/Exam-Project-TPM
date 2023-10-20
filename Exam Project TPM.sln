@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam Project TPM", "Exam Project TPM\Exam Project TPM.csproj", "{069BF029-90C6-4FB0-B5B6-0B4C9D24AF28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcClass", "CalcClass\CalcClass.csproj", "{E36FE589-F8BB-4E6C-B670-CDACE796491A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{069BF029-90C6-4FB0-B5B6-0B4C9D24AF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{069BF029-90C6-4FB0-B5B6-0B4C9D24AF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{069BF029-90C6-4FB0-B5B6-0B4C9D24AF28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E36FE589-F8BB-4E6C-B670-CDACE796491A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E36FE589-F8BB-4E6C-B670-CDACE796491A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E36FE589-F8BB-4E6C-B670-CDACE796491A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E36FE589-F8BB-4E6C-B670-CDACE796491A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
