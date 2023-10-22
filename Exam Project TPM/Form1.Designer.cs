@@ -33,10 +33,10 @@
             this.resultBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.leftBraceButton = new System.Windows.Forms.Button();
-            this.rightBraceButton = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
             this.backspaceButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.rightBraceButton = new System.Windows.Forms.Button();
+            this.leftBraceButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,39 +57,44 @@
             this.buttonMC = new System.Windows.Forms.Button();
             this.buttonMR = new System.Windows.Forms.Button();
             this.buttonMPlus = new System.Windows.Forms.Button();
+            this.buttonABSOrIABS = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 15);
+            this.label1.Location = new System.Drawing.Point(19, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Expression";
             // 
             // expressionBox
             // 
-            this.expressionBox.Location = new System.Drawing.Point(78, 12);
+            this.expressionBox.Location = new System.Drawing.Point(104, 15);
+            this.expressionBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.expressionBox.Name = "expressionBox";
-            this.expressionBox.Size = new System.Drawing.Size(259, 20);
+            this.expressionBox.Size = new System.Drawing.Size(344, 22);
             this.expressionBox.TabIndex = 1;
             // 
             // resultBox
             // 
-            this.resultBox.Location = new System.Drawing.Point(78, 38);
+            this.resultBox.Location = new System.Drawing.Point(104, 47);
+            this.resultBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.resultBox.Name = "resultBox";
             this.resultBox.ReadOnly = true;
-            this.resultBox.Size = new System.Drawing.Size(259, 20);
+            this.resultBox.Size = new System.Drawing.Size(344, 22);
             this.resultBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 41);
+            this.label2.Location = new System.Drawing.Point(19, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Result";
             // 
@@ -99,60 +104,67 @@
             this.groupBox1.Controls.Add(this.clearButton);
             this.groupBox1.Controls.Add(this.rightBraceButton);
             this.groupBox1.Controls.Add(this.leftBraceButton);
-            this.groupBox1.Location = new System.Drawing.Point(17, 71);
+            this.groupBox1.Location = new System.Drawing.Point(23, 87);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 64);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(427, 79);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editing";
             // 
-            // leftBraceButton
-            // 
-            this.leftBraceButton.Location = new System.Drawing.Point(7, 19);
-            this.leftBraceButton.Name = "leftBraceButton";
-            this.leftBraceButton.Size = new System.Drawing.Size(48, 39);
-            this.leftBraceButton.TabIndex = 0;
-            this.leftBraceButton.Text = "(";
-            this.leftBraceButton.UseVisualStyleBackColor = true;
-            this.leftBraceButton.Click += new System.EventHandler(this.leftBraceButton_Click);
-            // 
-            // rightBraceButton
-            // 
-            this.rightBraceButton.Location = new System.Drawing.Point(61, 20);
-            this.rightBraceButton.Name = "rightBraceButton";
-            this.rightBraceButton.Size = new System.Drawing.Size(48, 38);
-            this.rightBraceButton.TabIndex = 1;
-            this.rightBraceButton.Text = ")";
-            this.rightBraceButton.UseVisualStyleBackColor = true;
-            this.rightBraceButton.Click += new System.EventHandler(this.rightBraceButton_Click);
-            // 
-            // clearButton
-            // 
-            this.clearButton.ForeColor = System.Drawing.Color.Red;
-            this.clearButton.Location = new System.Drawing.Point(243, 19);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(71, 38);
-            this.clearButton.TabIndex = 2;
-            this.clearButton.Text = "C";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
-            // 
             // backspaceButton
             // 
             this.backspaceButton.ForeColor = System.Drawing.Color.Red;
-            this.backspaceButton.Location = new System.Drawing.Point(139, 20);
+            this.backspaceButton.Location = new System.Drawing.Point(185, 23);
+            this.backspaceButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backspaceButton.Name = "backspaceButton";
-            this.backspaceButton.Size = new System.Drawing.Size(98, 38);
+            this.backspaceButton.Size = new System.Drawing.Size(131, 47);
             this.backspaceButton.TabIndex = 3;
             this.backspaceButton.Text = "Backspace";
             this.backspaceButton.UseVisualStyleBackColor = true;
             this.backspaceButton.Click += new System.EventHandler(this.backspaceButton_Click);
             // 
+            // clearButton
+            // 
+            this.clearButton.ForeColor = System.Drawing.Color.Red;
+            this.clearButton.Location = new System.Drawing.Point(324, 23);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(95, 47);
+            this.clearButton.TabIndex = 2;
+            this.clearButton.Text = "C";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // rightBraceButton
+            // 
+            this.rightBraceButton.Location = new System.Drawing.Point(81, 23);
+            this.rightBraceButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rightBraceButton.Name = "rightBraceButton";
+            this.rightBraceButton.Size = new System.Drawing.Size(64, 47);
+            this.rightBraceButton.TabIndex = 1;
+            this.rightBraceButton.Text = ")";
+            this.rightBraceButton.UseVisualStyleBackColor = true;
+            this.rightBraceButton.Click += new System.EventHandler(this.rightBraceButton_Click);
+            // 
+            // leftBraceButton
+            // 
+            this.leftBraceButton.Location = new System.Drawing.Point(9, 23);
+            this.leftBraceButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.leftBraceButton.Name = "leftBraceButton";
+            this.leftBraceButton.Size = new System.Drawing.Size(64, 47);
+            this.leftBraceButton.TabIndex = 0;
+            this.leftBraceButton.Text = "(";
+            this.leftBraceButton.UseVisualStyleBackColor = true;
+            this.leftBraceButton.Click += new System.EventHandler(this.leftBraceButton_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 159);
+            this.button1.Location = new System.Drawing.Point(32, 196);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 39);
+            this.button1.Size = new System.Drawing.Size(64, 48);
             this.button1.TabIndex = 4;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
@@ -160,9 +172,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(78, 159);
+            this.button2.Location = new System.Drawing.Point(104, 196);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 39);
+            this.button2.Size = new System.Drawing.Size(64, 48);
             this.button2.TabIndex = 5;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
@@ -170,9 +183,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(132, 159);
+            this.button3.Location = new System.Drawing.Point(176, 196);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(48, 39);
+            this.button3.Size = new System.Drawing.Size(64, 48);
             this.button3.TabIndex = 6;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
@@ -180,9 +194,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(24, 204);
+            this.button4.Location = new System.Drawing.Point(32, 251);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(48, 39);
+            this.button4.Size = new System.Drawing.Size(64, 48);
             this.button4.TabIndex = 7;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
@@ -190,9 +205,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(78, 204);
+            this.button5.Location = new System.Drawing.Point(104, 251);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 39);
+            this.button5.Size = new System.Drawing.Size(64, 48);
             this.button5.TabIndex = 8;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
@@ -200,9 +216,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(132, 204);
+            this.button6.Location = new System.Drawing.Point(176, 251);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(48, 39);
+            this.button6.Size = new System.Drawing.Size(64, 48);
             this.button6.TabIndex = 9;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
@@ -210,9 +227,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(24, 249);
+            this.button7.Location = new System.Drawing.Point(32, 306);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(48, 39);
+            this.button7.Size = new System.Drawing.Size(64, 48);
             this.button7.TabIndex = 10;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
@@ -220,9 +238,10 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(78, 249);
+            this.button8.Location = new System.Drawing.Point(104, 306);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(48, 39);
+            this.button8.Size = new System.Drawing.Size(64, 48);
             this.button8.TabIndex = 11;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
@@ -230,9 +249,10 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(132, 249);
+            this.button9.Location = new System.Drawing.Point(176, 306);
+            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(48, 39);
+            this.button9.Size = new System.Drawing.Size(64, 48);
             this.button9.TabIndex = 12;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
@@ -240,9 +260,10 @@
             // 
             // button0
             // 
-            this.button0.Location = new System.Drawing.Point(78, 294);
+            this.button0.Location = new System.Drawing.Point(104, 362);
+            this.button0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(48, 39);
+            this.button0.Size = new System.Drawing.Size(64, 48);
             this.button0.TabIndex = 13;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
@@ -250,9 +271,10 @@
             // 
             // buttonComma
             // 
-            this.buttonComma.Location = new System.Drawing.Point(24, 294);
+            this.buttonComma.Location = new System.Drawing.Point(32, 362);
+            this.buttonComma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonComma.Name = "buttonComma";
-            this.buttonComma.Size = new System.Drawing.Size(48, 39);
+            this.buttonComma.Size = new System.Drawing.Size(64, 48);
             this.buttonComma.TabIndex = 14;
             this.buttonComma.Text = ",";
             this.buttonComma.UseVisualStyleBackColor = true;
@@ -261,9 +283,10 @@
             // buttonMod
             // 
             this.buttonMod.ForeColor = System.Drawing.Color.Red;
-            this.buttonMod.Location = new System.Drawing.Point(132, 294);
+            this.buttonMod.Location = new System.Drawing.Point(176, 362);
+            this.buttonMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMod.Name = "buttonMod";
-            this.buttonMod.Size = new System.Drawing.Size(48, 39);
+            this.buttonMod.Size = new System.Drawing.Size(64, 48);
             this.buttonMod.TabIndex = 15;
             this.buttonMod.Text = "mod";
             this.buttonMod.UseVisualStyleBackColor = true;
@@ -272,9 +295,10 @@
             // buttonPlus
             // 
             this.buttonPlus.ForeColor = System.Drawing.Color.Red;
-            this.buttonPlus.Location = new System.Drawing.Point(186, 294);
+            this.buttonPlus.Location = new System.Drawing.Point(248, 362);
+            this.buttonPlus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonPlus.Name = "buttonPlus";
-            this.buttonPlus.Size = new System.Drawing.Size(48, 39);
+            this.buttonPlus.Size = new System.Drawing.Size(64, 48);
             this.buttonPlus.TabIndex = 16;
             this.buttonPlus.Text = "+";
             this.buttonPlus.UseVisualStyleBackColor = true;
@@ -283,9 +307,10 @@
             // buttonSub
             // 
             this.buttonSub.ForeColor = System.Drawing.Color.Red;
-            this.buttonSub.Location = new System.Drawing.Point(186, 249);
+            this.buttonSub.Location = new System.Drawing.Point(248, 306);
+            this.buttonSub.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSub.Name = "buttonSub";
-            this.buttonSub.Size = new System.Drawing.Size(48, 39);
+            this.buttonSub.Size = new System.Drawing.Size(64, 48);
             this.buttonSub.TabIndex = 17;
             this.buttonSub.Text = "-";
             this.buttonSub.UseVisualStyleBackColor = true;
@@ -294,9 +319,10 @@
             // buttonMul
             // 
             this.buttonMul.ForeColor = System.Drawing.Color.Red;
-            this.buttonMul.Location = new System.Drawing.Point(186, 204);
+            this.buttonMul.Location = new System.Drawing.Point(248, 251);
+            this.buttonMul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMul.Name = "buttonMul";
-            this.buttonMul.Size = new System.Drawing.Size(48, 39);
+            this.buttonMul.Size = new System.Drawing.Size(64, 48);
             this.buttonMul.TabIndex = 18;
             this.buttonMul.Text = "*";
             this.buttonMul.UseVisualStyleBackColor = true;
@@ -305,9 +331,10 @@
             // buttonDiv
             // 
             this.buttonDiv.ForeColor = System.Drawing.Color.Red;
-            this.buttonDiv.Location = new System.Drawing.Point(186, 159);
+            this.buttonDiv.Location = new System.Drawing.Point(248, 196);
+            this.buttonDiv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDiv.Name = "buttonDiv";
-            this.buttonDiv.Size = new System.Drawing.Size(48, 39);
+            this.buttonDiv.Size = new System.Drawing.Size(64, 48);
             this.buttonDiv.TabIndex = 19;
             this.buttonDiv.Text = "/";
             this.buttonDiv.UseVisualStyleBackColor = true;
@@ -316,9 +343,10 @@
             // buttonEquals
             // 
             this.buttonEquals.ForeColor = System.Drawing.Color.Red;
-            this.buttonEquals.Location = new System.Drawing.Point(289, 294);
+            this.buttonEquals.Location = new System.Drawing.Point(385, 362);
+            this.buttonEquals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEquals.Name = "buttonEquals";
-            this.buttonEquals.Size = new System.Drawing.Size(48, 39);
+            this.buttonEquals.Size = new System.Drawing.Size(64, 48);
             this.buttonEquals.TabIndex = 20;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = true;
@@ -327,9 +355,10 @@
             // buttonMC
             // 
             this.buttonMC.ForeColor = System.Drawing.Color.Blue;
-            this.buttonMC.Location = new System.Drawing.Point(289, 249);
+            this.buttonMC.Location = new System.Drawing.Point(385, 306);
+            this.buttonMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMC.Name = "buttonMC";
-            this.buttonMC.Size = new System.Drawing.Size(48, 39);
+            this.buttonMC.Size = new System.Drawing.Size(64, 48);
             this.buttonMC.TabIndex = 21;
             this.buttonMC.Text = "MC";
             this.buttonMC.UseVisualStyleBackColor = true;
@@ -338,9 +367,10 @@
             // buttonMR
             // 
             this.buttonMR.ForeColor = System.Drawing.Color.Blue;
-            this.buttonMR.Location = new System.Drawing.Point(289, 159);
+            this.buttonMR.Location = new System.Drawing.Point(385, 196);
+            this.buttonMR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMR.Name = "buttonMR";
-            this.buttonMR.Size = new System.Drawing.Size(48, 39);
+            this.buttonMR.Size = new System.Drawing.Size(64, 48);
             this.buttonMR.TabIndex = 22;
             this.buttonMR.Text = "MR";
             this.buttonMR.UseVisualStyleBackColor = true;
@@ -349,19 +379,32 @@
             // buttonMPlus
             // 
             this.buttonMPlus.ForeColor = System.Drawing.Color.Blue;
-            this.buttonMPlus.Location = new System.Drawing.Point(289, 204);
+            this.buttonMPlus.Location = new System.Drawing.Point(385, 251);
+            this.buttonMPlus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMPlus.Name = "buttonMPlus";
-            this.buttonMPlus.Size = new System.Drawing.Size(48, 39);
+            this.buttonMPlus.Size = new System.Drawing.Size(64, 48);
             this.buttonMPlus.TabIndex = 23;
             this.buttonMPlus.Text = "M+";
             this.buttonMPlus.UseVisualStyleBackColor = true;
             this.buttonMPlus.Click += new System.EventHandler(this.buttonMPlus_Click);
             // 
+            // buttonABSOrIABS
+            // 
+            this.buttonABSOrIABS.ForeColor = System.Drawing.Color.Blue;
+            this.buttonABSOrIABS.Location = new System.Drawing.Point(317, 196);
+            this.buttonABSOrIABS.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonABSOrIABS.Name = "buttonABSOrIABS";
+            this.buttonABSOrIABS.Size = new System.Drawing.Size(64, 48);
+            this.buttonABSOrIABS.TabIndex = 24;
+            this.buttonABSOrIABS.Text = "+/-";
+            this.buttonABSOrIABS.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 345);
+            this.ClientSize = new System.Drawing.Size(465, 425);
+            this.Controls.Add(this.buttonABSOrIABS);
             this.Controls.Add(this.buttonMPlus);
             this.Controls.Add(this.buttonMR);
             this.Controls.Add(this.buttonMC);
@@ -387,8 +430,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.expressionBox);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calc";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -426,6 +470,7 @@
         private System.Windows.Forms.Button buttonMC;
         private System.Windows.Forms.Button buttonMR;
         private System.Windows.Forms.Button buttonMPlus;
+        private System.Windows.Forms.Button buttonABSOrIABS;
     }
 }
 
