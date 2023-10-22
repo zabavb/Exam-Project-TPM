@@ -31,7 +31,7 @@ namespace CalcClass
         {
             if (b == 0)
             {
-                _lastError = "Division by zero is not allowed.";
+                _lastError = "Error 09";
                 return 0;
             }
             return a / b;
@@ -41,7 +41,7 @@ namespace CalcClass
         {
             if (b == 0)
             {
-                _lastError = "Modulus by zero is not allowed.";
+                _lastError = "Error 09";
                 return 0;
             }
             return a % b;
@@ -65,41 +65,64 @@ namespace CalcClass
         private static bool ShowMessage = true;
         private static string _lastError;
 
+        public static string LastError
+        {
+            get { return _lastError; }
+        }
+
         public static bool CheckCurrency(string input)
         {
             expression = input;
             erposition = 0;
             int bracketCount = 0;
 
-            foreach (char c in expression)
+            for (int i = 0; i < expression.Length; i++)
             {
-                if (c == '(')
+                if (expression[i] == '(')
                 {
+                    erposition = i;
                     bracketCount++;
                 }
-                else if (c == ')')
+                else if (expression[i] == ')')
                 {
                     bracketCount--;
                     if (bracketCount < 0)
                     {
+                        _lastError = $"Error 01 at {i}";
                         return false;
                     }
                 }
             }
 
-            return bracketCount == 0;
+            if(bracketCount != 0)
+            {
+                _lastError = $"Error 01 at {erposition}";
+                return false;
+            }
+            return true;
         }
 
         public static string Format(string input)
         {
-            expression = input;
-            string formattedExpression = expression.Replace(" ", "");
+            expression = input.Replace(" ", "");
+            string formattedExpression = expression;
 
-            for (int i = 1; i < formattedExpression.Length; i++)
+            if (IsOperator(formattedExpression[expression.Length - 1]))
             {
-                if (IsOperator(formattedExpression[i]) && IsOperator(formattedExpression[i - 1]))
+                _lastError = $"Error 05";
+                return "";
+            }
+
+            for (int i = 0; i < expression.Length - 1; i++)
+            {
+                if (IsOperator(formattedExpression[i]) && IsOperator(formattedExpression[i + 1]))
                 {
-                    _lastError = "Invalid operators in the expression.";
+                    _lastError = $"Error 04 at {i}";
+                    return "";
+                }
+                if (!IsOperator(formattedExpression[i]) && !IsDigit(formattedExpression[i]))
+                {
+                    _lastError = $"Error 02 at {i}";
                     return "";
                 }
             }
@@ -119,7 +142,7 @@ namespace CalcClass
                 {
                     string number = "";
 
-                    while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == '.'))
+                    while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == ','))
                     {
                         number += expression[i];
                         i++;
@@ -133,7 +156,7 @@ namespace CalcClass
                     }
                     else
                     {
-                        _lastError = "Invalid number in the expression.";
+                        _lastError = $"Invalid number in the expression.{number}";
                         return new ArrayList();
                     }
                 }
@@ -248,6 +271,7 @@ namespace CalcClass
 
         public static string Estimate(string input)
         {
+            _lastError = "";
             string formattedExpression = Format(input);
             if (string.IsNullOrWhiteSpace(formattedExpression))
             {
@@ -272,6 +296,11 @@ namespace CalcClass
         private static bool IsOperator(char c)
         {
             return "+-*/%".Contains(c.ToString());
+        }
+
+        private static bool IsDigit(char c)
+        {
+            return "0123456789(),".Contains(c.ToString());
         }
 
         private static int GetOperatorPrecedence(char op)
