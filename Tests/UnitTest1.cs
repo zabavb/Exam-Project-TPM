@@ -19,19 +19,19 @@ namespace Tests
         [DataRow(")(", false)]
         public void ExpressionEvaluator_CheckCurrency_Validate(string expr, bool result)
         {
-            Assert.AreEqual(CalcClass.ExpressionEvaluator.CheckCurrency(expr), result);
+            Assert.AreEqual(result, CalcClass.ExpressionEvaluator.CheckCurrency(expr));
         }
         [TestMethod]
-        [DataRow("1+1", "1 + 1")]
-        [DataRow("(1+1)", "(1 + 1)")]
-        [DataRow("(        1               +              1              )", "(1 + 1)")]
-        [DataRow("(1+-1)", "(1 + 1)")]
-        [DataRow("(-1+-1)", "(-1 + 1)")]
+        [DataRow("1+1", "1+1")]
+        [DataRow("(1+1)", "(1+1)")]
+        [DataRow("(        1               +              1              )", "(1+1)")]
+        [DataRow("(1+-1)", "")]
+        [DataRow("(-1+-1)", "")]
         [DataRow("1h1", "")]
         [DataRow("1+", "")]
         public void ExpressionEvaluator_Format_Validate(string expr, string result)
         {
-            Assert.AreEqual(CalcClass.ExpressionEvaluator.Format(expr), result);
+            Assert.AreEqual(result, CalcClass.ExpressionEvaluator.Format(expr));
         }
     }
 }
