@@ -60,7 +60,7 @@ namespace CalcClass
 
     public class ExpressionEvaluator
     {
-        private static double erposition = 0;
+        private static int erposition = 0;
         private static string expression = "";
         private static bool ShowMessage = true;
         private static string _lastError;
@@ -96,14 +96,10 @@ namespace CalcClass
 
             if (bracketCount != 0)
             {
-                _lastError = $"Error 01 at {GetErrorPosition()}";
+                _lastError = $"Error 01 at {erposition + 1}";
                 return false;
             }
             return true;
-        }
-        public static double GetErrorPosition()
-        {
-            return erposition + 1;
         }
 
         public static string Format(string input)

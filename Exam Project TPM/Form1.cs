@@ -51,7 +51,7 @@ namespace Exam_Project_TPM
         {
             _expr = "";
             expressionBox.Text = "";
-            resultBox.Text = "";
+            expressionBox.Text = "";
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -118,7 +118,6 @@ namespace Exam_Project_TPM
             _expr += ",";
             expressionBox.Text = _expr;
         }
-
         private void button0_Click(object sender, EventArgs e)
         {
             _expr += "0";
@@ -139,17 +138,17 @@ namespace Exam_Project_TPM
             expressionBox.Text = _memory.ToString();
             resultBox.Text = "";
         }
-
         private void buttonMPlus_Click(object sender, EventArgs e)
         {
-            resultBox.Text = Equals();
-            if (!string.IsNullOrEmpty(resultBox.Text) && !_error)
+            if (!string.IsNullOrEmpty(expressionBox.Text) && !_error)
             {
-                _memory += double.Parse(resultBox.Text);
+                expressionBox.Text = Equals();
+                resultBox.Text = "";
+
+                _memory += double.Parse(expressionBox.Text);
                 expressionBox.Text = _memory.ToString();
             }
         }
-
         private void buttonMC_Click(object sender, EventArgs e)
         {
             _memory = 0.0;

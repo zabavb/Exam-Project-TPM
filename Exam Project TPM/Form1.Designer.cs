@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.expressionBox = new System.Windows.Forms.TextBox();
-            this.resultBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.backspaceButton = new System.Windows.Forms.Button();
@@ -58,6 +56,8 @@
             this.buttonMR = new System.Windows.Forms.Button();
             this.buttonMPlus = new System.Windows.Forms.Button();
             this.buttonABSOrIABS = new System.Windows.Forms.Button();
+            this.resultBox = new System.Windows.Forms.TextBox();
+            this.expressionBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,24 +70,6 @@
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Expression";
-            // 
-            // expressionBox
-            // 
-            this.expressionBox.Location = new System.Drawing.Point(104, 15);
-            this.expressionBox.Margin = new System.Windows.Forms.Padding(4);
-            this.expressionBox.Name = "expressionBox";
-            this.expressionBox.Size = new System.Drawing.Size(344, 22);
-            this.expressionBox.TabIndex = 1;
-            this.expressionBox.TextChanged += new System.EventHandler(this.expressionBox_TextChanged);
-            // 
-            // resultBox
-            // 
-            this.resultBox.Location = new System.Drawing.Point(104, 47);
-            this.resultBox.Margin = new System.Windows.Forms.Padding(4);
-            this.resultBox.Name = "resultBox";
-            this.resultBox.ReadOnly = true;
-            this.resultBox.Size = new System.Drawing.Size(344, 22);
-            this.resultBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -401,6 +383,24 @@
             this.buttonABSOrIABS.UseVisualStyleBackColor = true;
             this.buttonABSOrIABS.Click += new System.EventHandler(this.buttonABSOrIABS_Click);
             // 
+            // resultBox
+            // 
+            this.resultBox.Location = new System.Drawing.Point(104, 47);
+            this.resultBox.Margin = new System.Windows.Forms.Padding(4);
+            this.resultBox.Name = "resultBox";
+            this.resultBox.ReadOnly = true;
+            this.resultBox.Size = new System.Drawing.Size(344, 22);
+            this.resultBox.TabIndex = 3;
+            // 
+            // expressionBox
+            // 
+            this.expressionBox.Location = new System.Drawing.Point(104, 15);
+            this.expressionBox.Margin = new System.Windows.Forms.Padding(4);
+            this.expressionBox.Name = "expressionBox";
+            this.expressionBox.Size = new System.Drawing.Size(344, 22);
+            this.expressionBox.TabIndex = 1;
+            this.expressionBox.TextChanged += new System.EventHandler(this.expressionBox_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -444,8 +444,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox expressionBox;
-        private System.Windows.Forms.TextBox resultBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button leftBraceButton;
@@ -473,6 +471,8 @@
         private System.Windows.Forms.Button buttonMR;
         private System.Windows.Forms.Button buttonMPlus;
         private System.Windows.Forms.Button buttonABSOrIABS;
+        private System.Windows.Forms.TextBox resultBox;
+        private System.Windows.Forms.TextBox expressionBox;
     }
 }
 
