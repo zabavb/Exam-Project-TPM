@@ -142,11 +142,11 @@ namespace CalcClass
 
             for (int i = 0; i < expression.Length; i++)
             {
-                if (char.IsDigit(expression[i]) || expression[i] == '.')
+                if (char.IsDigit(expression[i]) || expression[i] == ',')
                 {
                     string number = "";
 
-                    while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == '.'))
+                    while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == ','))
                     {
                         number += expression[i];
                         i++;
