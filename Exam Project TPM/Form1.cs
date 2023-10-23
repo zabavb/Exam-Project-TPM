@@ -160,15 +160,23 @@ namespace Exam_Project_TPM
             _expr = expressionBox.Text;
             if (!string.IsNullOrEmpty(_expr))
             {
-                string res = ExpressionEvaluator.Estimate(_expr);
-                char[] tmpChr = res.ToCharArray();
-                foreach (var item in tmpChr)
-                    if (char.IsLetter(item))
-                    {
-                        _error = true;
-                        break;
-                    }
-                return res;
+                if (ExpressionEvaluator.CheckCurrency(_expr))
+                {
+                    string res = ExpressionEvaluator.Estimate(_expr);
+                    char[] tmpChr = res.ToCharArray();
+                    foreach (var item in tmpChr)
+                        if (char.IsLetter(item))
+                        {
+                            _error = true;
+                            break;
+                        }
+                    return res;
+                }
+                else
+                {
+                    _error = true;
+                    return ExpressionEvaluator.LastError;
+                }
             }
             else
                 return expressionBox.Text;
@@ -181,9 +189,9 @@ namespace Exam_Project_TPM
             {
                 int tmpInt = Convert.ToInt32(res);
                 if (tmpInt > 0)
-                    resultBox.Text = "-" + res;
+                    resultBox.Text = Calc.IABS(tmpInt).ToString();  /*"-" + res;*/
                 else
-                    resultBox.Text = res.Remove(0, 1);
+                    resultBox.Text = Calc.ABS(tmpInt).ToString();   /*res.Remove(0, 1);*/
             }
             else
                 resultBox.Text = res;
