@@ -12,22 +12,22 @@ namespace CalcClass
             get { return _lastError; }
         }
 
-        public static int Add(int a, int b)
+        public static double Add(double a, double b)
         {
             return a + b;
         }
 
-        public static int Subtract(int a, int b)
+        public static double Subtract(double a, double b)
         {
             return a - b;
         }
 
-        public static int Multiply(int a, int b)
+        public static double Multiply(double a, double b)
         {
             return a * b;
         }
 
-        public static int Divide(int a, int b)
+        public static double Divide(double a, double b)
         {
             if (b == 0)
             {
@@ -37,7 +37,7 @@ namespace CalcClass
             return a / b;
         }
 
-        public static int Modulus(int a, int b)
+        public static double Modulus(double a, double b)
         {
             if (b == 0)
             {
@@ -47,12 +47,12 @@ namespace CalcClass
             return a % b;
         }
 
-        public static int ABS(int a)
+        public static double ABS(double a)
         {
             return Math.Abs(a);
         }
 
-        public static int IABS(int a)
+        public static double IABS(double a)
         {
             return -Math.Abs(a);
         }
@@ -60,7 +60,7 @@ namespace CalcClass
 
     public class ExpressionEvaluator
     {
-        private static int erposition = 0;
+        private static double erposition = 0;
         private static string expression = "";
         private static bool ShowMessage = true;
         private static string _lastError;
@@ -94,12 +94,16 @@ namespace CalcClass
                 }
             }
 
-            if(bracketCount != 0)
+            if (bracketCount != 0)
             {
-                _lastError = $"Error 01 at {erposition}";
+                _lastError = $"Error 01 at {GetErrorPosition()}";
                 return false;
             }
             return true;
+        }
+        public static double GetErrorPosition()
+        {
+            return erposition + 1;
         }
 
         public static string Format(string input)
@@ -138,11 +142,11 @@ namespace CalcClass
 
             for (int i = 0; i < expression.Length; i++)
             {
-                if (char.IsDigit(expression[i]))
+                if (char.IsDigit(expression[i]) || expression[i] == '.')
                 {
                     string number = "";
 
-                    while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == ','))
+                    while (i < expression.Length && (char.IsDigit(expression[i]) || expression[i] == '.'))
                     {
                         number += expression[i];
                         i++;
@@ -156,7 +160,7 @@ namespace CalcClass
                     }
                     else
                     {
-                        _lastError = $"Invalid number in the expression.{number}";
+                        _lastError = $"Invalid number in the expression: {number}";
                         return new ArrayList();
                     }
                 }
