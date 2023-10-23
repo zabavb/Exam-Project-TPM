@@ -51,7 +51,7 @@ namespace Exam_Project_TPM
         {
             _expr = "";
             expressionBox.Text = "";
-            expressionBox.Text = "";
+            resultBox.Text = "";
         }
         private void button1_Click(object sender, EventArgs e)
         {
