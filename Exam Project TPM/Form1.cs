@@ -17,8 +17,7 @@ namespace Exam_Project_TPM
     public partial class Form1 : Form
     {
         private string _expr = "";
-        private int _memory = 0;
-        private int _result = 0;
+        private double _memory = 0;
         private bool _error = false;
 
         public Form1()
@@ -137,26 +136,29 @@ namespace Exam_Project_TPM
         }
         private void buttonMR_Click(object sender, EventArgs e)
         {
-            _result = _memory;
+            expressionBox.Text = _memory.ToString();
+            resultBox.Text = "";
         }
 
         private void buttonMPlus_Click(object sender, EventArgs e)
         {
-            _memory += _result;
+            resultBox.Text = Equals();
+            if (!string.IsNullOrEmpty(resultBox.Text) && !_error)
+            {
+                _memory += double.Parse(resultBox.Text);
+                expressionBox.Text = _memory.ToString();
+            }
         }
 
         private void buttonMC_Click(object sender, EventArgs e)
         {
-            _memory = 0;
-        }
-
-        private void buttonEquals_Click(object sender, EventArgs e)
-        {
-            resultBox.Text = Equals();
+            _memory = 0.0;
+            expressionBox.Text = _memory.ToString();
         }
 
         private string Equals()
         {
+            _error = false;
             _expr = expressionBox.Text;
             if (!string.IsNullOrEmpty(_expr))
             {
@@ -181,17 +183,20 @@ namespace Exam_Project_TPM
             else
                 return expressionBox.Text;
         }
-
+        private void buttonEquals_Click(object sender, EventArgs e)
+        {
+            resultBox.Text = Equals();
+        }
         private void buttonABSOrIABS_Click(object sender, EventArgs e)
         {
             string res = Equals();
             if (!string.IsNullOrEmpty(res) && !_error)
             {
-                int tmpInt = Convert.ToInt32(res);
-                if (tmpInt > 0)
-                    resultBox.Text = Calc.IABS(tmpInt).ToString();  /*"-" + res;*/
+                double tmpDbl = double.Parse(res);
+                if (tmpDbl > 0)
+                    resultBox.Text = Calc.IABS(tmpDbl).ToString();  /*"-" + res;*/
                 else
-                    resultBox.Text = Calc.ABS(tmpInt).ToString();   /*res.Remove(0, 1);*/
+                    resultBox.Text = Calc.ABS(tmpDbl).ToString();   /*res.Remove(0, 1);*/
             }
             else
                 resultBox.Text = res;
