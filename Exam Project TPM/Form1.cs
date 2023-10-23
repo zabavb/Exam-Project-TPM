@@ -181,9 +181,9 @@ namespace Exam_Project_TPM
             {
                 int tmpInt = Convert.ToInt32(res);
                 if (tmpInt > 0)
-                    resultBox.Text = Calc.IABS(tmpInt).ToString();  /*"-" + res;*/
+                    resultBox.Text = "-" + res;
                 else
-                    resultBox.Text = Calc.ABS(tmpInt).ToString();   /*res.Remove(0, 1);*/
+                    resultBox.Text = res.Remove(0, 1);
             }
             else
                 resultBox.Text = res;
