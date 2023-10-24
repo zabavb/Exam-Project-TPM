@@ -60,6 +60,12 @@ namespace Exam_Project_TPM
             buttonMC.BackColor = Color.FromArgb(160, 185, 199);
         }
 
+        private void documentation_Click()      //Створищ action на кнопку з цим кодом
+        {
+            Doc doc = new Doc();
+            doc.ShowDialog();
+        }
+
         private void expressionBox_TextChanged(object sender, EventArgs e)
         {
             _expr = expressionBox.Text;
