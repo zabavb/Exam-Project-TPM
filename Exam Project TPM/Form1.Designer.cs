@@ -254,7 +254,7 @@ namespace Exam_Project_TPM
             // 
             // buttonComma
             // 
-            this.buttonComma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(198)))), ((int)(((byte)(212)))));
+            this.buttonComma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(219)))), ((int)(((byte)(232)))));
             this.buttonComma.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonComma.ForeColor = System.Drawing.Color.White;
             this.buttonComma.Location = new System.Drawing.Point(180, 356);
@@ -390,7 +390,7 @@ namespace Exam_Project_TPM
             // 
             // buttonABSOrIABS
             // 
-            this.buttonABSOrIABS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(185)))), ((int)(((byte)(199)))));
+            this.buttonABSOrIABS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(198)))), ((int)(((byte)(212)))));
             this.buttonABSOrIABS.ForeColor = System.Drawing.Color.White;
             this.buttonABSOrIABS.Location = new System.Drawing.Point(272, 59);
             this.buttonABSOrIABS.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
