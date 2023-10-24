@@ -62,7 +62,6 @@ namespace CalcClass
     {
         private static int erposition = 0;
         private static string expression = "";
-        private static bool ShowMessage = true;
         private static string _lastError;
 
         public static string LastError

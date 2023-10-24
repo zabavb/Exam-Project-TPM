@@ -23,44 +23,9 @@ namespace Exam_Project_TPM
         public Form1()
         {
             InitializeComponent();
-
-            /*BackColor = Color.FromArgb(8, 4, 4);
-            clearButton.BackColor = Color.FromArgb(164, 168, 160);
-            buttonMul.BackColor = Color.FromArgb(255, 164, 12);
-            button1.BackColor = Color.FromArgb(52, 56, 48);*/
-
-            BackColor = Color.FromArgb(194, 219, 232);
-
-            button1.BackColor = Color.FromArgb(194, 219, 232);
-            button2.BackColor = Color.FromArgb(194, 219, 232);
-            button3.BackColor = Color.FromArgb(194, 219, 232);
-            button4.BackColor = Color.FromArgb(194, 219, 232);
-            button5.BackColor = Color.FromArgb(194, 219, 232);
-            button6.BackColor = Color.FromArgb(194, 219, 232);
-            button7.BackColor = Color.FromArgb(194, 219, 232);
-            button8.BackColor = Color.FromArgb(194, 219, 232);
-            button9.BackColor = Color.FromArgb(194, 219, 232);
-            button0.BackColor = Color.FromArgb(194, 219, 232);
-
-            buttonPlus.BackColor = Color.FromArgb(173, 198, 212);
-            buttonSub.BackColor = Color.FromArgb(173, 198, 212);
-            buttonMul.BackColor = Color.FromArgb(173, 198, 212);
-            buttonDiv.BackColor = Color.FromArgb(173, 198, 212);
-            buttonMod.BackColor = Color.FromArgb(173, 198, 212);
-            leftBraceButton.BackColor = Color.FromArgb(173, 198, 212);
-            rightBraceButton.BackColor = Color.FromArgb(173, 198, 212);
-            buttonEquals.BackColor = Color.FromArgb(173, 198, 212);
-            buttonComma.BackColor = Color.FromArgb(173, 198, 212);
-
-            clearButton.BackColor = Color.FromArgb(160, 185, 199);
-            backspaceButton.BackColor = Color.FromArgb(160, 185, 199);
-            buttonABSOrIABS.BackColor = Color.FromArgb(160, 185, 199);
-            buttonMR.BackColor = Color.FromArgb(160, 185, 199);
-            buttonMPlus.BackColor = Color.FromArgb(160, 185, 199);
-            buttonMC.BackColor = Color.FromArgb(160, 185, 199);
         }
 
-        private void documentation_Click()      //Створищ action на кнопку з цим кодом
+        private void buttonDoc_Click(object sender, EventArgs e)
         {
             Doc doc = new Doc();
             doc.ShowDialog();
@@ -69,7 +34,7 @@ namespace Exam_Project_TPM
         private void expressionBox_TextChanged(object sender, EventArgs e)
         {
             _expr = expressionBox.Text;
-            char[] tmpChr = _expr.ToCharArray();
+            /*char[] tmpChr = _expr.ToCharArray();
             for (int i = 0; i < tmpChr.Length; i++)
             {
                 if (char.IsLetter(tmpChr[i]))
@@ -93,13 +58,16 @@ namespace Exam_Project_TPM
                         RemoveElement(i);
                     }
                 }
-            }
+            }*/
         }
-        private void RemoveElement(int index)
+        /*private void RemoveElement(int index)
         {
-            expressionBox.Text = expressionBox.Text.Remove(index, 1);
-            expressionBox.SelectionStart = expressionBox.Text.Length;
-        }
+            if (index > 0)
+            {
+                expressionBox.Text = expressionBox.Text.Remove(index, 1);
+                expressionBox.SelectionStart = expressionBox.Text.Length;
+            }
+        }*/
 
         private void leftBraceButton_Click(object sender, EventArgs e)
         {
@@ -123,7 +91,6 @@ namespace Exam_Project_TPM
         {
             _expr = "";
             expressionBox.Text = "";
-            resultBox.Text = "";
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -208,14 +175,12 @@ namespace Exam_Project_TPM
         private void buttonMR_Click(object sender, EventArgs e)
         {
             expressionBox.Text = _memory.ToString();
-            resultBox.Text = "";
         }
         private void buttonMPlus_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(expressionBox.Text) && !_error)
             {
                 expressionBox.Text = Equals();
-                resultBox.Text = "";
 
                 _memory += double.Parse(expressionBox.Text);
                 expressionBox.Text = _memory.ToString();
@@ -256,7 +221,7 @@ namespace Exam_Project_TPM
         }
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            resultBox.Text = Equals();
+            expressionBox.Text = Equals();
         }
         private void buttonABSOrIABS_Click(object sender, EventArgs e)
         {
@@ -265,12 +230,12 @@ namespace Exam_Project_TPM
             {
                 double tmpDbl = double.Parse(res);
                 if (tmpDbl > 0)
-                    resultBox.Text = Calc.IABS(tmpDbl).ToString();  /*"-" + res;*/
+                    expressionBox.Text = Calc.IABS(tmpDbl).ToString();
                 else
-                    resultBox.Text = Calc.ABS(tmpDbl).ToString();   /*res.Remove(0, 1);*/
+                    expressionBox.Text = Calc.ABS(tmpDbl).ToString();
             }
             else
-                resultBox.Text = res;
+                expressionBox.Text = res;
         }
     }
 }
