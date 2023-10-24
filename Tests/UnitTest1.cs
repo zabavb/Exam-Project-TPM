@@ -21,6 +21,7 @@ namespace Tests
         {
             Assert.AreEqual(result, CalcClass.ExpressionEvaluator.CheckCurrency(expr));
         }
+
         [TestMethod]
         [DataRow("1+1", "1+1")]
         [DataRow("(1+1)", "(1+1)")]
@@ -32,6 +33,21 @@ namespace Tests
         public void ExpressionEvaluator_Format_Validate(string expr, string result)
         {
             Assert.AreEqual(result, CalcClass.ExpressionEvaluator.Format(expr));
+        }
+
+        [TestMethod]
+        [DataRow("-1", "(0-1)")]
+        [DataRow("(-1)", "((0-1))")]
+        [DataRow("(1*-1)", "(1*(0-1))")]
+        [DataRow("(-1)*(1*-1)", "((0-1))*(1*(0-1))")]
+        [DataRow("+1", "(0+1)")]
+        [DataRow("+144.773", "(0+144.773)")]
+        [DataRow("(+1)", "((0+1))")]
+        [DataRow("(1*+1)", "(1*(0+1))")]
+        [DataRow("(+1)*(1*+1)", "((0+1))*(1*(0+1))")]
+        public void ExpressionEvaluator_FixUnary_Validate(string expr, string result)
+        {
+            Assert.AreEqual(result, CalcClass.ExpressionEvaluator.FixUnary(expr));
         }
     }
 }
