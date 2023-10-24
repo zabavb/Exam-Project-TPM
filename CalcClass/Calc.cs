@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace CalcClass
 {
@@ -99,6 +100,16 @@ namespace CalcClass
                 return false;
             }
             return true;
+        }
+        public static string FixUnary(string input)
+        {
+            // Replace unary minus with (0-) and add a right parenthesis
+            string result = Regex.Replace(input, @"(?<=^|\(|\+|\-|\*|\/)(\s*\-\s*(?:\d+\.?\d*|\d*\.?\d+))", "(0$&)");
+
+            // Replace unary plus with (0+) and add a right parenthesis
+            result = Regex.Replace(result, @"(?<=^|\(|\+|\-|\*|\/)(\s*\+\s*(?:\d+\.?\d*|\d*\.?\d+))", "(0$&)");
+
+            return result;
         }
 
         public static string Format(string input)
@@ -271,7 +282,7 @@ namespace CalcClass
         public static string Estimate(string input)
         {
             _lastError = "";
-            string formattedExpression = Format(input);
+            string formattedExpression = Format(FixUnary(input));
             if (string.IsNullOrWhiteSpace(formattedExpression))
             {
                 return _lastError;
